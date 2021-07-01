@@ -1,0 +1,9 @@
+<footer class="mt-auto">
+  <nav class="nav nav-masthead justify-content-center">
+    <%= link_to "About", about_path, class:"nav-link#{" active" if  current_page?(about_path) }" %>
+    <%= link_to "Contact", contact_path, class:"nav-link#{" active" if  current_page?(contact_path) }" %>
+    <%= link_to "Cookies", cookiepolicy_path, class:"nav-link#{" active" if  current_page?(cookiepolicy_path) }" %>
+    <%= link_to "Privacy", privacypolicy_path, class:"nav-link#{" active" if  current_page?(privacypolicy_path) }" %>
+    <%= link_to "Terms", terms_path, class:"nav-link#{" active" if  current_page?(terms_path) }" %>
+  </nav>
+</footer>
