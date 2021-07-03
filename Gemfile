@@ -5,7 +5,7 @@ ruby '2.7.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
-# Use sqlite3 as the database for Active Record
+gem 'aws-sdk-s3', '~> 1.96', '>= 1.96.1', require: false
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'

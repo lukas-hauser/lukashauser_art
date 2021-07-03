@@ -14,3 +14,10 @@ ActiveStorage.start()
 
 import "bootstrap";
 import "../stylesheets/application"
+
+// to update:
+// import * as bootstrap from 'bootstrap'
+// import "../stylesheets/application"
+
+require("trix")
+require("@rails/actiontext")

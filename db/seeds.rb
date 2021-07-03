@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'csv'
+
+CSV.foreach(Rails.root.join('lib/seed_csv/blog_posts.csv'), headers: true) do |row|
+  blogpost = Blogpost.create({
+               post_title: row['post_title'],
+               created_at: row['created_at']
+             })
+             unless row['image_urls'].nil?
+               row['image_urls'].split(" ").each do |image_url|
+                 blogpost.images.attach(
+                  io: URI.parse(image_url).open,
+                  filename: 'photo.jpg',
+                  content_type: 'image/jpg'
+                )
+                end
+              end
+            blogpost.save!
+            ActionText::RichText.create!(record_type: 'Blogpost', record_id: blogpost.id, name: 'content', body: row['content'])
+end

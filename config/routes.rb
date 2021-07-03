@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get '/cookiepolicy',  to: 'html_pages#cookiepolicy'
   get '/privacypolicy', to: 'html_pages#privacypolicy'
   get '/terms',         to: 'html_pages#terms'
+  get '/blog',          to: 'blogposts#index'
+  resources :blogposts, only: %i[show index]
 end
