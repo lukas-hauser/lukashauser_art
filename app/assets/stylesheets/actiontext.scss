@@ -33,12 +33,16 @@
       max-width: 100% !important;
     }
   }
+  h4, p, a, ul {
+    text-shadow: 0.1rem .1rem .5rem rgba(0, 0, 0, 1);
+  }
   h4 {
     margin-top: 25px;
   }
   p {
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: justify;
   }
   a {
     color: white;
@@ -46,5 +50,6 @@
   ul {
     list-style: inside;
     margin-bottom: 10px;
+    text-align: justify;
   }
 }
