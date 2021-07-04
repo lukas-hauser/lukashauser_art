@@ -1,8 +1,7 @@
 <%= provide(:title, 'Blog' ) %>
-
+<% provide :pageheader, render('background_image') %>
+<% provide :background_image, rails_blob_url(@blogpost.images[0]) %>
 <h1><%= @blogpost.post_title %></h1>
-<div class="row mt-5 mb-5">
-  <%= render 'image_carousel' %>
-</div>
-<p><%= @blogpost.content %></p>
 <p><%= @blogpost.created_at.strftime("%d %b %Y") %></p>
+<p><%= @blogpost.content %></p>
+<%= render 'image_carousel' %>

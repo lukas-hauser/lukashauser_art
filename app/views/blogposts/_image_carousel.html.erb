@@ -28,7 +28,7 @@
         <% i=0 %>
         <% @blogpost.images.each do |image| %>
           <div class="carousel-item<%= ' active' if i == 0 %>" alt:"...">
-            <%= image_tag image, class:"img-fluid carousel-full-height-image" %>
+            <%= image_tag image, class:"img-fluid w-100 carousel-full-width-image" %>
           </div>
           <% i+=1 %>
         <% end %>

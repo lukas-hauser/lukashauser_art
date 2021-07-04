@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import "./actiontext.scss";
+
 html, body, #wrapper {
   width: 100%;
   height: 100%;
@@ -21,7 +23,6 @@ html, body, #wrapper {
 
 #wrapper {
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
-  box-shadow: inset 0 0 25rem rgba(0, 0, 0, .5);
   overflow: auto;
 }
 
@@ -52,31 +53,52 @@ html, body, #wrapper {
   color: #fff;
 }
 
-.card-img-sm {
+.card img:hover {
+  opacity: 0.5;
+  transform: scale(1.05);
+}
+
+.card-img {
   object-fit: cover;
   object-position: center center;
+}
+
+.card-img-sm {
   height: 10rem;
 }
 
 .card-img-md {
-  object-fit: cover;
-  object-position: center center;
   height: 15rem;
 }
 
 .card-img-lg {
-  object-fit: cover;
-  object-position: center center;
   height: 20rem;
-}
-
-.carousel-full-height-image {
-  max-height: 100vh;
-  max-height: -webkit-fill-available;
-  object-fit: cover;
-  object-position: center center;
 }
 
 .carousel-full-width-image {
   object-fit: contain;
+}
+
+.carousel img {
+    height: 1000px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel {
+    height: 1000px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#background {
+  width: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  box-shadow: inset 1px 2000px rgba(0, 0, 0, 0.8);
 }
