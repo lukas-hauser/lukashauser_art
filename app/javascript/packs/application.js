@@ -14,6 +14,7 @@ ActiveStorage.start()
 
 import "bootstrap";
 import "../stylesheets/application"
+import 'bootstrap-icons/font/bootstrap-icons.css'
 
 // to update:
 // import * as bootstrap from 'bootstrap'

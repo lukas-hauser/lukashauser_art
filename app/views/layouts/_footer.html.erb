@@ -1,4 +1,11 @@
 <footer class="mt-auto">
+  <div class="container-center" style="opacity: 0.5">
+    <a href="https://www.instagram.com/lukas.hauser/" target="_blank"> <i class="bi bi-instagram" style="font-size: 1.5rem; color: lightgrey;"></i></a>
+    <a href="https://facebook.com/lukashauserart" target="_blank"> <i class="bi bi-facebook" style="font-size: 1.5rem; color: lightgrey;"></i></a>
+    <a href="https://twitter.com/l_ukashauser" target="_blank"> <i class="bi bi-twitter" style="font-size: 1.5rem; color: lightgrey;"></i></a>
+    <a href="https://www.linkedin.com/in/lukashauser/" target="_blank"> <i class="bi bi-linkedin" style="font-size: 1.5rem; color: lightgrey;"></i></a>
+    <a href="https://github.com/lukas-hauser" target="_blank"> <i class="bi bi-github" style="font-size: 1.5rem; color: lightgrey;"></i></a>
+  </div>
   <nav class="nav nav-masthead justify-content-center">
     <%= link_to "About", about_path, class:"nav-link#{" active" if  current_page?(about_path) }" %>
     <%= link_to "Contact", contact_path, class:"nav-link#{" active" if  current_page?(contact_path) }" %>
@@ -6,4 +13,5 @@
     <%= link_to "Privacy", privacypolicy_path, class:"nav-link#{" active" if  current_page?(privacypolicy_path) }" %>
     <%= link_to "Terms", terms_path, class:"nav-link#{" active" if  current_page?(terms_path) }" %>
   </nav>
+  <small class="d-block mb-3 text-muted">&copy; <%= Date.today.year %> Lukas Hauser</small>
 </footer>
