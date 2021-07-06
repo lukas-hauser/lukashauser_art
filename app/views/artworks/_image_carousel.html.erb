@@ -1,0 +1,38 @@
+<% if @artwork.images.attached? %>
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <% if @artwork.images.count > 1 %>
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <% i=0 %>
+        <% @artwork.images.each do %>
+          <li data-bs-target="#myCarousel" data-bs-slide-to="<%= i %>" class="<%= 'active' if i == 0 %>"></li>
+          <% i+=1 %>
+        <% end %>
+      </ol>
+
+      <!-- Left and right controls -->
+      <button class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"">Previous</span>
+      </button>
+      <button class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"">Next</span>
+      </button>
+    <% end %>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <% if @artwork.images %>
+        <% i=0 %>
+        <% @artwork.images.each do |image| %>
+          <div class="carousel-item<%= ' active' if i == 0 %>" alt:"...">
+            <%= image_tag image, class:"img-fluid w-100 carousel-full-width-image" %>
+          </div>
+          <% i+=1 %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_03_132139) do
+ActiveRecord::Schema.define(version: 2021_07_06_175226) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -48,6 +48,21 @@ ActiveRecord::Schema.define(version: 2021_07_03_132139) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "artworks", force: :cascade do |t|
+    t.string "listing_name"
+    t.string "category"
+    t.text "description"
+    t.string "medium"
+    t.float "height"
+    t.float "width"
+    t.string "status"
+    t.string "url"
+    t.string "tags"
+    t.integer "year"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "blogposts", force: :cascade do |t|

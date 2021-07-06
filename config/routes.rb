@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get '/terms',         to: 'html_pages#terms'
   get '/blog',          to: 'blogposts#index'
   resources :blogposts, only: %i[show index]
+  resources :artworks,  only: %i[show index]
+  get '/paintings',     to: 'artworks#paintings'
+  get '/photography',   to: 'artworks#photography'
+  get '/digitalart',    to: 'artworks#digital_art'
 end

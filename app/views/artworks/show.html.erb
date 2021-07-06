@@ -1,0 +1,8 @@
+<%= provide(:title, @artwork.listing_name ) %>
+<% provide :pageheader, render('background_image') %>
+<% provide :background_image, asset_path('exhibition-bw.jpg') %>
+
+<%= render 'image_carousel' %>
+<h1 class="mt-5"><%= @artwork.listing_name %></h1>
+
+<p class="lead"><%= @artwork.description %></p>

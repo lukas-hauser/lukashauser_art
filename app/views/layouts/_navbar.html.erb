@@ -4,8 +4,9 @@
       <%= link_to "Lukas Hauser", root_path, class:"text-white", style:"text-decoration: none" %>
     </h3>
     <nav class="nav nav-masthead justify-content-center float-md-end">
-      <a class="nav-link" aria-current="page" href="#">Art</a>
-      <a class="nav-link" href="#">Photography</a>
+      <%= link_to "Paintings", paintings_path, class:"nav-link#{" active" if  current_page?(paintings_path) }" %>
+      <%= link_to "Digital Art", digitalart_path, class:"nav-link#{" active" if  current_page?(digitalart_path) }" %>
+      <%= link_to "Photography", photography_path, class:"nav-link#{" active" if  current_page?(photography_path) }" %>
       <%= link_to "Blog", blog_path, class:"nav-link#{" active" if  current_page?(blog_path) }" %>
     </nav>
   </div>

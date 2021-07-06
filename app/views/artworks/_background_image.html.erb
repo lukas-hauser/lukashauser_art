@@ -1,0 +1,3 @@
+<% if @artwork.images.attached? %>
+  <%= image_tag @artwork.images[0], class:"img-fluid w-100 full-height-image" %>
+<% end %>

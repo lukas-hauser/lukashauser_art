@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing_name: MyString
+  category: MyString
+  description: MyText
+  medium: MyString
+  height: 1.5
+  width: 1.5
+  status: MyString
+  url: MyString
+  tags: MyString
+
+two:
+  listing_name: MyString
+  category: MyString
+  description: MyText
+  medium: MyString
+  height: 1.5
+  width: 1.5
+  status: MyString
+  url: MyString
+  tags: MyString
