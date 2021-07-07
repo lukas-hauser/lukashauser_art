@@ -1,5 +1,6 @@
 class Artwork < ApplicationRecord
   has_many_attached :images
+  has_many_attached :videos
 
   validates :listing_name, presence: true, length: { maximum: 60 }
   validates :tags, presence: true, length: { maximum: 60 }

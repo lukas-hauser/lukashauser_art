@@ -2,7 +2,21 @@
 <% provide :pageheader, render('background_image') %>
 <% provide :background_image, asset_path('exhibition-bw.jpg') %>
 
-<%= render 'image_carousel' %>
-<h1 class="mt-5"><%= @artwork.listing_name %></h1>
+<h1><%= @artwork.listing_name %></h1>
 
 <p class="lead"><%= @artwork.description %></p>
+
+<% if @artwork.status == "For Sale" && !@artwork.url.nil? %>
+  <%= link_to "Buy", @artwork.url, target: :_blank, class: "btn btn-light" %>
+<% elsif @artwork.status == "Sold" %>
+  <p class="lead">Sold</p>
+<% end %>
+
+<div class="mt-5 mb-5">
+  <%= render 'image_carousel' %>
+</div>
+
+<p class="lead"><%= @artwork.medium %> <%= @artwork.year %></p>
+<% if !@artwork.height.nil? && !@artwork.width.nil? %>
+  <p class="lead">Width: <%= @artwork.width %> cm | Height: <%= @artwork.height %> cm</p>
+<% end %>

@@ -6,47 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'csv'
-
-CSV.foreach(Rails.root.join('lib/seed_csv/blog_posts.csv'), headers: true) do |row|
-  blogpost = Blogpost.create({
-               post_title: row['post_title'],
-               created_at: row['created_at']
-             })
-             unless row['image_urls'].nil?
-               row['image_urls'].split(" ").each do |image_url|
-                 blogpost.images.attach(
-                  io: URI.parse(image_url).open,
-                  filename: 'photo.jpg',
-                  content_type: 'image/jpg'
-                )
-                end
-              end
-            blogpost.save!
-            ActionText::RichText.create!(record_type: 'Blogpost', record_id: blogpost.id, name: 'content', body: row['content'])
-end
-
-CSV.foreach(Rails.root.join('lib/seed_csv/lukas_hauser_art.csv'), headers: true) do |row|
-  artwork = Artwork.create({
-               listing_name: row['listing_name'],
-               category: row['category'],
-               description: row['description'],
-               medium: row['medium'],
-               height: row['height'],
-               width: row['width'],
-               year: row['year'],
-               status: row['status'],
-               url: row['created_at'],
-               tags: row['tags']
-             })
-             unless row['image_urls'].nil?
-               row['image_urls'].split(" ").each do |image_url|
-                 artwork.images.attach(
-                  io: URI.parse(image_url).open,
-                  filename: 'photo.jpg',
-                  content_type: 'image/jpg'
-                )
-                end
-              end
-            artwork.save!
-end
+artwork = Artwork.create({
+             listing_name: 'Solar Eclipse',
+             category: 'Digital',
+             description: '',
+             medium: '',
+             height: '',
+             width: '',
+             year: '2021',
+             status: 'For Sale',
+             url: 'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/40525126915916834544117793535314037258910228972250538345868954549959650181121/',
+             tags: 'Digital Art, NFT'
+           })
+          artwork.images.attach(
+            io: File.open('app/assets/images/solar_eclipse_nft.png'),
+            filename: 'solar_eclipse_nft.png')
+          artwork.videos.attach(
+            io: File.open('app/assets/images/solar_eclipse_nft.mp4'),
+            filename: 'solar_eclipse_nft.mp4')
+          artwork.save!

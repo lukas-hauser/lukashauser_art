@@ -1,4 +1,6 @@
-<% if @artwork.images.attached? %>
+<% if @artwork.videos.attached? %>
+  <%= image_tag @artwork.videos[0], class:"img-fluid w-100 carousel-full-width-image" %>
+<% elsif @artwork.images.attached? %>
   <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
 
     <% if @artwork.images.count > 1 %>
