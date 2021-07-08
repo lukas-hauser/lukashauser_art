@@ -1,4 +1,7 @@
 <% provide(:title, 'Home') %>
+<% unless Artwork.where('listing_name = ?', 'Solar Eclipse')[0].nil? %>
+  <% provide :background_image, rails_blob_url(Artwork.where('listing_name = ?', 'Solar Eclipse')[0].videos[0]) %>
+<% end %>
 
 <main class="px-3">
   <h1>Surf, Art & Rock n' Roll</h1>
