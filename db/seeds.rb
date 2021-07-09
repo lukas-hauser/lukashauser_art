@@ -7,18 +7,21 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 artwork = Artwork.create({
-             listing_name: 'Recycling - What else?',
+             listing_name: 'This Guitar Does Not Exist - 1',
              category: 'Digital',
-             description: "I wonder how many of those capsules end up in landfills and elsewhere where they shouldn't. If you're using coffee capsules out of convenience - how do you feel about recycling them?",
+             description: "As a guitar nerd (let me confess: Gibson fanboy) and machine learning enthusiast, it was obvious for me to train a GAN (Generative Adversarial Network) with guitar images. None of these guitars actually exists, these are all fake images that the neural network generated. So you might call them Chibsons rather than Gibsons.",
              medium: '',
              height: '',
              width: '',
-             year: '2016',
+             year: '2021',
              status: 'For Sale',
-             url: 'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/40525126915916834544117793535314037258910228972250538345868954552158673436673/',
+             url: 'https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/40525126915916834544117793535314037258910228972250538345868954553258185064449/',
              tags: 'Digital Art, NFT'
            })
           artwork.images.attach(
-            io: File.open('app/assets/images/recycling_what_else.jpg'),
-            filename: 'recycling_what_else.jpg')
+            io: File.open('app/assets/images/ThisGuitarDoesNotExist1.png'),
+            filename: 'ThisGuitarDoesNotExist1.png')
+          artwork.videos.attach(
+            io: File.open('app/assets/images/ThisGuitarDoesNotExist1.mp4'),
+            filename: 'ThisGuitarDoesNotExist1.mp4')
           artwork.save!
