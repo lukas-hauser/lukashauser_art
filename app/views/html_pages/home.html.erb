@@ -1,7 +1,5 @@
 <% provide(:title, 'Home') %>
-<% unless Artwork.where('listing_name = ?', 'Solar Eclipse')[0].nil? %>
-  <% provide :background_image, (asset_path('ThisGuitarDoesNotExist1.mp4')) %>
-<% end %>
+<% provide :background_image, (asset_path('artist_portrait.jpg')) %>
 
 <main class="px-3">
   <h1>Surf, Art & Rock n' Roll</h1>
