@@ -29,9 +29,13 @@ p {
   text-align: center;
 }
 
-.btn {
+.btn-light {
   opacity: 0.8;
   text-shadow: none;
+}
+
+.btn-light:hover {
+  opacity: 1;
 }
 
 #wrapper {
